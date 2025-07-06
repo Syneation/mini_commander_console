@@ -14,7 +14,6 @@ int main()
 	{
 		std::cout << "\\" << path << " >> ";
 		std::getline(std::cin, user_input);
-
 		
 
 		if (user_input == "exit")
@@ -39,6 +38,16 @@ int main()
 
 		//
 		//End open files/folders
+		//
+
+		//
+		//find file
+		//
+		else if (user_input.substr(0, 5) == "find ")
+			find_file_or_folders(user_input, path);
+
+		//
+		//End find file
 		//
 
 		else

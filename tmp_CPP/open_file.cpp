@@ -1,4 +1,4 @@
-#include "helper.cpp"
+#include "helper_for_work_with_files.h"
 
 bool check_folders(const std::string path_folder);
 void out_files_from_folders_comm_open(const fs::path path_f); // for output fils/folds use command open ...
