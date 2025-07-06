@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="clear_console.cpp" />
+    <ClCompile Include="delete_file_folder.cpp" />
     <ClCompile Include="find_file_or_folder.cpp" />
     <ClCompile Include="helper.cpp" />
     <ClCompile Include="open_file.cpp" />

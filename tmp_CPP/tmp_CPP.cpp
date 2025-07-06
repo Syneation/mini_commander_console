@@ -27,9 +27,6 @@ int main()
 		else if (user_input.substr(0, 5) == "open ") // for all OS
 			open_file(user_input, &path);
 
-		else if (user_input.substr(0, 11) == "open whide ") // open with hidden file/folders
-			open_file(user_input, &path);
-
 		else if (user_input.substr(0, 6) == "openf ")
 			open_file(user_input, &path);
 
@@ -48,6 +45,15 @@ int main()
 
 		//
 		//End find file
+		//
+
+		//
+		//delete file / folders
+		//
+		else if (user_input.substr(0, 7) == "delete " || user_input == "delete")
+			delete_file_or_folder(user_input, &path);
+		//
+		//End delete file / folders
 		//
 
 		else

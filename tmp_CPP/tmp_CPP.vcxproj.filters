@@ -30,6 +30,9 @@
     <ClCompile Include="find_file_or_folder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="delete_file_folder.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helper_for_work_with_files.h">
