@@ -12,7 +12,9 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 		std::string path = user_input.substr(7);
 		if (!FILEH::path_exists(path))
 		{
-			std::cout << "File is not found!" << std::endl;
+			ColCons::set_red_color_console();
+			std::cout << "File / Folder is not found!" << std::endl;
+			ColCons::set_white_color_console();
 			return;
 		}
 
@@ -29,15 +31,20 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 
 				if (std::remove(path.c_str()) == 0)
 				{
+					ColCons::set_green_color_console();
 					std::cout << "File deleted successfully!" << std::endl;
 
 					if (*path_f == path)
 						*path_f = "\\";
+					ColCons::set_white_color_console();
+
 				}
 				else
 				{
+					ColCons::set_red_color_console();
 					std::cerr << "Error: failed to delete file (" << errno << ") - "
 						<< path << std::endl;
+					ColCons::set_white_color_console();
 					perror("Reason");
 				}
 			}
@@ -47,9 +54,11 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 				{
 					if (fs::remove(path))
 					{
+						ColCons::set_green_color_console();
 						std::cout << "Empty folder deleted successfully!" << std::endl;
 						if (*path_f == path)
 							*path_f = "\\";
+						ColCons::set_white_color_console();
 					}
 				} 
 				catch (const std::filesystem::filesystem_error& fs_err)
@@ -64,8 +73,9 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 
 					if (uin_t > 0)
 					{
+						ColCons::set_green_color_console();
 						std::cout << "Deleted " << uin_t << " items from folder succesffully!" << std::endl;
-
+						ColCons::set_white_color_console();
 						if (*path_f == path)
 							*path_f = "\\";
 					}
@@ -80,11 +90,15 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 		} 
 		catch (const std::filesystem::filesystem_error& e)
 		{
+			ColCons::set_red_color_console();
 			std::cerr << "Filesystem error: " << e.what() << std::endl;
+			ColCons::set_white_color_console();
 		}
 		catch (const std::exception& e)
 		{
+			ColCons::set_red_color_console();
 			std::cerr << "[ERROR] " << e.what() << std::endl;
+			ColCons::set_white_color_console();
 		}
 	}
 	//
@@ -94,7 +108,9 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 	{
 		if (!FILEH::path_exists(*path_f))
 		{
+			ColCons::set_red_color_console();
 			std::cout << "File is not found!" << std::endl;
+			ColCons::set_white_color_console();
 			return;
 		}
 
@@ -113,14 +129,18 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 
 				if (std::remove(path.c_str()) == 0)
 				{
+					ColCons::set_green_color_console();
 					std::cout << "File deleted successfully!" << std::endl;
+					ColCons::set_white_color_console();
 					path = "\\";
 				}
 				else
 				{
+					ColCons::set_red_color_console();
 					std::cerr << "Error: failed to delete file (" << errno << ") - "
 						<< path << std::endl;
 					perror("Reason");
+					ColCons::set_white_color_console();
 				}
 			}
 			else if (FILEH::is_directory(path))
@@ -129,8 +149,10 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 				{
 					if (fs::remove(path))
 					{
+						ColCons::set_green_color_console();
 						std::cout << "Empty folder deleted successfully!" << std::endl;
 						*path_f = "\\";
+						ColCons::set_white_color_console();
 					}
 				}
 				catch (const std::filesystem::filesystem_error& fs_err)
@@ -145,12 +167,16 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 
 					if (uin_t > 0)
 					{
+						ColCons::set_green_color_console();
 						std::cout << "Deleted " << uin_t << " items from folder succesffully!" << std::endl;
 						*path_f = "\\";
+						ColCons::set_white_color_console();
 					}
 					else
 					{
+						ColCons::set_red_color_console();
 						std::cerr << "Error: failed to delete folder - " << path << " !" << std::endl;
+						ColCons::set_white_color_console();
 						return;
 					}
 				}
@@ -159,11 +185,16 @@ void delete_file_or_folder(std::string user_input, std::string* path_f)
 		}
 		catch (const std::filesystem::filesystem_error& e)
 		{
+			ColCons::set_red_color_console();
 			std::cerr << "Filesystem error: " << e.what() << std::endl;
+			ColCons::set_white_color_console();
 		}
 		catch (const std::exception& e)
 		{
+			ColCons::set_red_color_console();
 			std::cerr << "[ERROR] " << e.what() << std::endl;
+			ColCons::set_white_color_console();
 		}
 	}
 }
+
