@@ -1,38 +1,7 @@
 ﻿#include "main_func.h"
 
-#include <Windows.h>
-
 int main()
 {
-	//
-	// change font console 
-	//
-	HWND hwnd = GetConsoleWindow(); // Получаем дескриптор окна консоли
-	if (hwnd == NULL) {
-		std::cerr << "Не удалось получить дескриптор окна консоли." << std::endl;
-		return 1;
-	}
-
-	// Пример изменения шрифта на Courier New, размер 16
-	CONSOLE_FONT_INFOEX cfi;
-	cfi.cbSize = sizeof(cfi);
-	if (!GetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi)) {
-		std::cerr << "Не удалось получить информацию о шрифте." << std::endl;
-		return 1;
-	}
-
-	wcscpy_s(cfi.FaceName, L"Courier New");
-	cfi.dwFontSize.X = 16;
-	cfi.dwFontSize.Y = 16;
-
-	if (!SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi)) {
-		std::cerr << "Не удалось установить шрифт." << std::endl;
-		return 1;
-	}
-	//
-	// End change font console 
-	//
-
 	setlocale(LC_ALL, "ru");
 
 	bool isRun = true;
@@ -54,18 +23,35 @@ int main()
 		//
 		else if (user_input == "help")
 		{
+			std::cout << "help - just help" << std::endl;
+			std::cout << "clear / cls - clearing the console" << std::endl;
+			std::cout << "clear / cls - clearing the console" << std::endl;
+			std::cout << "info - information about this programm" << std::endl;
 			std::cout << "cd - the command to change the working directory" << std::endl;
 			std::cout << "dir - allows you to display a list of files and subdirectories for the specified directory" << std::endl;
-			std::cout << "open ... <- (path) - allows you to display a list of files and subdirectories for the specified directory" << std::endl;
 			std::cout << "openf ... <- (path with file or just folder) - opening a file or folder through OS programs" << std::endl;
-			std::cout << "clear / cls - clearing the console" << std::endl;
+			std::cout << "open ... <- (path) - allows you to display a list of files and subdirectories for the specified directory" << std::endl;
 			std::cout << "find ... <- (name file / folder) - first you need to specify the path via cd, then you can search for a file / folder." << std::endl;
-			std::cout << "clear / cls - clearing the console" << std::endl;
-			std::cout << "delete ... <- (name file / folder or first you need to specify the path via cd, then just write delete) - delete file / folder" << std::endl;
 			std::cout << "create / cr ... <- (path) ... <- (file or folder) ... <- (name file / folder) - the command to create a file or folder" << std::endl;
+			std::cout << "delete ... <- (1 option: name file / folder or 2 option: first you need to specify the path via cd, then just write delete) - delete file / folder" << std::endl;
 		}
 		//
 		// End help
+		//
+
+		//
+		// info
+		//
+		else if (user_input == "info")
+		{
+			std::cout << "___MINI_COMMANDER_CONSOLE___" << std::endl;
+			std::cout << "_________VERSION_1__________" << std::endl;
+			std::cout << "______AUTHOR: ALEXANDER_____" << std::endl;
+			std::cout << "_____GIT-HUB: SYNEATION_____" << std::endl;
+			std::cout << "_________JUST FUN ;)________" << std::endl;
+		}
+		//
+		// End info
 		//
 
 		//

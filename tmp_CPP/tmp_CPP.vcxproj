@@ -133,7 +133,6 @@
     <ClCompile Include="create_ff.cpp" />
     <ClCompile Include="delete_file_folder.cpp" />
     <ClCompile Include="find_file_or_folder.cpp" />
-    <ClCompile Include="font_in_console.cpp" />
     <ClCompile Include="helper.cpp" />
     <ClCompile Include="helper_for_create_ff.cpp" />
     <ClCompile Include="hWork_with_color.cpp" />

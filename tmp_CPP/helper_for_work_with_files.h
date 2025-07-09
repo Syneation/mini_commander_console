@@ -11,7 +11,7 @@
 
 #include <conio.h>
 #include <Windows.h>
-#include <sys/stat.h>
+
 #include <stdio.h>
 
 namespace fs = std::filesystem;

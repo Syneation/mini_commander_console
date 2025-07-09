@@ -42,9 +42,6 @@
     <ClCompile Include="helper_for_create_ff.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="font_in_console.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helper_for_work_with_files.h">

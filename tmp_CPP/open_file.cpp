@@ -20,7 +20,9 @@ void open_file(const std::string user_input, std::string* path_f)
 		}
 		else
 		{
+			ColCons::set_red_color_console();
 			std::cout << "Error: folder is not found!" << std::endl;
+			ColCons::set_white_color_console();
 		}
 	}
 	//
@@ -60,7 +62,9 @@ void out_files_from_folders_comm_open(const fs::path path_f)
 	{
 		if (!fs::exists(path_f) || !fs::is_directory(path_f))
 		{
+			ColCons::set_red_color_console();
 			std::cout << "Error: folder ( " << path_f << " ) is not found!" << std::endl;
+			ColCons::set_white_color_console();
 			return;
 		}
 
@@ -103,7 +107,9 @@ void out_files_from_folders_comm_open(const fs::path path_f)
 	}
 	catch (const fs::filesystem_error& fs_err)
 	{
+		ColCons::set_red_color_console();
 		std::cerr << "[ERROR] " << fs_err.what() << std::endl;
+		ColCons::set_white_color_console();
 	}
 }
 
@@ -114,7 +120,9 @@ void out_files_from_folders(const std::string path_f)
 {
 	if (!check_folders(path_f))
 	{
+		ColCons::set_red_color_console();
 		std::cout << "Error: folder ( " << path_f << " ) is not found!" << std::endl;
+		ColCons::set_white_color_console();
 		return;
 	}
 
@@ -126,7 +134,9 @@ void out_files_from_folders(const std::string path_f)
 	}
 	catch (const std::exception& e)
 	{
+		ColCons::set_red_color_console();
 		std::cout << "[ERROR] " << e.what() << std::endl;
+		ColCons::set_white_color_console();
 	}
 }
 
@@ -152,11 +162,17 @@ void open_file(const std::string path_f)
 		if (!result)
 			std::cout << "[SUCCESS OPEN]" << std::endl;
 		else
+		{
+			ColCons::set_red_color_console();
 			std::cerr << "[ERROR OPEN]" << std::endl;
+			ColCons::set_white_color_console();
+		}
 	}
 	catch (const std::exception& e)
 	{
+		ColCons::set_red_color_console();
 		std::cerr << "[ERROR OPEN FILE] " << e.what() << std::endl;
+		ColCons::set_white_color_console();
 		return;
 	}
 }
