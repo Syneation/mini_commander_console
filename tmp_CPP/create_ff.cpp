@@ -28,6 +28,9 @@ void create_file_folder(std::string user_input, std::string path_f)
 			return;
 		}
 
+        //
+        // create file
+        //
         if (choice_file_or_folder == "file")
         {
             // Checking for file extension
@@ -86,6 +89,42 @@ void create_file_folder(std::string user_input, std::string path_f)
                 std::cout << "Error creating file: " << e.what() << std::endl;
                 ColCons::set_white_color_console();
             }
+        } 
+        //
+        // create folder
+        //
+        else if (choice_file_or_folder == "folder")
+        {
+ 
+            fs::path full_path_folder = fs::path("L") / path / name_ff;
+            
+            if (!fs::exists(full_path_folder))
+            {
+                if (fs::create_directory(full_path_folder))
+                {
+                    ColCons::set_green_color_console();
+                    std::cout << "Folder created successfully!" << std::endl;
+                    ColCons::set_white_color_console();
+                }
+                else
+                {
+                    ColCons::set_red_color_console();
+                    std::cout << "Failed: the folder already exists!" << std::endl;
+                    ColCons::set_white_color_console();
+                }
+            }
+            else
+            {
+                ColCons::set_red_color_console();
+                std::cout << "Failed: the folder is not created!" << std::endl;
+                ColCons::set_white_color_console();
+            }
+        }
+        else
+        {
+            ColCons::set_red_color_console();
+            std::cout << "Failed: you need choice: file or folder!" << std::endl;
+            ColCons::set_white_color_console();
         }
 		
 	}
@@ -165,6 +204,42 @@ void create_file_folder(std::string user_input, std::string path_f)
                 std::cout << "Error creating file: " << e.what() << std::endl;
                 ColCons::set_white_color_console();
             }
+        }
+        //
+        // create folder
+        //
+        else if (choice_file_or_folder == "folder")
+        {
+
+            fs::path full_path_folder = fs::path("L") / path / name_ff;
+
+            if (!fs::exists(full_path_folder))
+            {
+                if (fs::create_directory(full_path_folder))
+                {
+                    ColCons::set_green_color_console();
+                    std::cout << "Folder created successfully!" << std::endl;
+                    ColCons::set_white_color_console();
+                }
+                else
+                {
+                    ColCons::set_red_color_console();
+                    std::cout << "Failed: the folder already exists!" << std::endl;
+                    ColCons::set_white_color_console();
+                }
+            }
+            else
+            {
+                ColCons::set_red_color_console();
+                std::cout << "Failed: the folder is not created!" << std::endl;
+                ColCons::set_white_color_console();
+            }
+        }
+        else
+        {
+            ColCons::set_red_color_console();
+            std::cout << "Failed: you need choice: file or folder!" << std::endl;
+            ColCons::set_white_color_console();
         }
 	}
 }
