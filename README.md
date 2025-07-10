@@ -35,19 +35,20 @@ dir
 ```
 (allows you to display a list of files and subdirectories for the specified directory) -> as windows too (command work only windows)
 
-# openf
-```
-openf ...
-```
-example -> openf ... <- (here path with file or just folder D:\test or D:\test.txt <- example)
-(opening a file or folder through OS programs) 
-
 # open
 ```
 open ...
 ```
 example -> open ... <- (path)  (work on all os)
 (allows you to display a list of files and subdirectories for the specified directory) 
+
+# openf
+```
+openf ...
+```
+example -> openf ... <- (here path with file or just folder D:\test or D:\test.txt <- example)
+(opening a file or folder through OS programs) 
+(why openf? because open file or folder)
 
 # find
 ```
