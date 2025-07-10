@@ -25,7 +25,6 @@ int main()
 		{
 			std::cout << "help - just help" << std::endl;
 			std::cout << "clear / cls - clearing the console" << std::endl;
-			std::cout << "clear / cls - clearing the console" << std::endl;
 			std::cout << "info - information about this programm" << std::endl;
 			std::cout << "cd - the command to change the working directory" << std::endl;
 			std::cout << "dir - allows you to display a list of files and subdirectories for the specified directory" << std::endl;
