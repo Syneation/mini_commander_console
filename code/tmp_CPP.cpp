@@ -30,7 +30,7 @@ int main()
 			std::cout << "dir - allows you to display a list of files and subdirectories for the specified directory" << std::endl;
 			std::cout << "openf ... <- (path with file or just folder) - opening a file or folder through OS programs" << std::endl;
 			std::cout << "open ... <- (path) - allows you to display a list of files and subdirectories for the specified directory" << std::endl;
-			std::cout << "find ... <- (name file / folder) - first you need to specify the path via cd, then you can search for a file / folder." << std::endl;
+			std::cout << "find ... <- (name file / folder) - first you need to specify the path via cd, then you can search for a file / folder" << std::endl;
 			std::cout << "create / cr ... <- (path) ... <- (file or folder) ... <- (name file / folder) - the command to create a file or folder" << std::endl;
 			std::cout << "delete ... <- (1 option: name file / folder or 2 option: first you need to specify the path via cd, then just write delete) - delete file / folder" << std::endl;
 		}
